@@ -55,6 +55,8 @@ fi # [ -f $5 ]
 #     # sh -c "$@"
 # # fi # [[ "$@" == "" ]]
 
+echo "$@"
+
 if [[ -d $SPEC_FILE ]]
 then
    for i in $SPEC_FILE/*.spec; do
