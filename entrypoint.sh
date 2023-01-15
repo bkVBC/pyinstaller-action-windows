@@ -47,14 +47,6 @@ if [ -f $5 ]; then
 fi # [ -f $5 ]
 
 
-
-# # if [[ "$@" == "" ]]; then
-# pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
-# chown -R --reference=. ./dist/windows
-# # else
-#     # sh -c "$@"
-# # fi # [[ "$@" == "" ]]
-
 echo "$@"
 
 if [[ -d $SPEC_FILE ]]
@@ -66,9 +58,3 @@ then
 else
    pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
 fi
-# #####
-# for i in $SPEC_FILE/*.spec; do
-#     echo pyinstaller --clean -y --dist ./dist/windows $i 
-#     pyinstaller --clean -y --dist ./dist/windows $i 
-# done
-# #####
