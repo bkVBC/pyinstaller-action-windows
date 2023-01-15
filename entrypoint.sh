@@ -58,3 +58,5 @@ then
 else
    pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
 fi
+
+chown -R --reference=. ./dist/windows
