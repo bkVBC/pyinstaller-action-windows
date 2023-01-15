@@ -66,3 +66,9 @@ then
 else
    pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
 fi
+# #####
+# for i in $SPEC_FILE/*.spec; do
+#     echo pyinstaller --clean -y --dist ./dist/windows $i 
+#     pyinstaller --clean -y --dist ./dist/windows $i 
+# done
+# #####
