@@ -64,6 +64,5 @@ then
        pyinstaller --clean -y --dist ./dist/windows $i 
    done    
 else
-    echo "Default args"
-#    pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
+   pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
 fi
