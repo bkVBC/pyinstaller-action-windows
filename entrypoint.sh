@@ -48,6 +48,7 @@ fi # [ -f $5 ]
 
 
 echo "$@"
+echo "output=$SPEC_FILE" >> $GITHUB_OUTPUT
 
 if [[ -d $SPEC_FILE ]]
 then
