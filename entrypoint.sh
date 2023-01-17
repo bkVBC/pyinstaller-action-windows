@@ -2,7 +2,6 @@
 
 # Fail on errors.
 set -e
-set +x
 
 # Make sure .bashrc is sourced
 . /root/.bashrc
@@ -47,16 +46,9 @@ if [ -f $5 ]; then
 fi # [ -f $5 ]
 
 
-echo "$@"
-
-if [[ -d $SPEC_FILE ]]
-then
-   for i in $SPEC_FILE/*.spec; do
-       echo pyinstaller --clean -y --dist ./dist/windows $i 
-       pyinstaller --clean -y --dist ./dist/windows $i 
-   done    
-else
-   pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
-fi
-
+# if [[ "$@" == "" ]]; then
+pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
 chown -R --reference=. ./dist/windows
+# else
+    # sh -c "$@"
+# fi # [[ "$@" == "" ]]
