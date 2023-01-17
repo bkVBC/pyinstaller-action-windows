@@ -48,14 +48,18 @@ fi # [ -f $5 ]
 
 
 echo "$@"
-echo "output=$SPEC_FILE" >> $GITHUB_OUTPUT
+
+declare -a SPEC_FILES_IN_DIR=()
 
 if [[ -d $SPEC_FILE ]]
 then
    for i in $SPEC_FILE/*.spec; do
+       SPEC_FILES_IN_DIR+=($i)
        echo pyinstaller --clean -y --dist ./dist/windows $i 
        pyinstaller --clean -y --dist ./dist/windows $i 
    done    
 else
    pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
 fi
+
+echo "output=${SPEC_FILES_IN_DIR[@]}" >> $GITHUB_OUTPUT
