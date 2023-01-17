@@ -54,7 +54,13 @@ declare -a SPEC_FILES_IN_DIR=()
 if [[ -d $SPEC_FILE ]]
 then
    for i in $SPEC_FILE/*.spec; do
-       SPEC_FILES_IN_DIR+=($i)
+   
+       # Remove ./ in front of file
+       NO_DIR_SPEC_FILE=$(cut -c 3- <<< $i)
+       
+       # Add it to an array for the output
+       SPEC_FILES_IN_DIR+=($NO_DIR_SPEC_FILE)
+       
        echo pyinstaller --clean -y --dist ./dist/windows $i 
        pyinstaller --clean -y --dist ./dist/windows $i 
    done    
