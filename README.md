@@ -1,5 +1,7 @@
 # PyInstaller-Action-Windows
 
+Fork of the PyInstaller-Action-windows that uses a different docker image containing python 3.10.
+
 Github Action for building executables with PyInstaller
 
 To build your application, you need to specify where your source code is via the `path` argument, this defaults to `src`.
