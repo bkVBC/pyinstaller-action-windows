@@ -1,6 +1,6 @@
 # PyInstaller-Action-Windows
 
-Fork of the PyInstaller-Action-windows that uses a different docker image containing Python 3.10.
+Fork of the PyInstaller-Action-windows that uses a different docker image containing Python 3.10. It modifies the entrypoint to the Docker image.
 
 Github Action for building executables with PyInstaller
 
