@@ -21,6 +21,10 @@ SPEC_FILE=${4:-*.spec}
 
 python -m pip install --upgrade pip wheel setuptools
 
+# Install git
+apt-get update -y
+apt-get install -y git
+
 #
 # In case the user specified a custom URL for PYPI, then use
 # that one, instead of the default one.
