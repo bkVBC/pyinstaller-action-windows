@@ -47,6 +47,8 @@ fi # [ -f $5 ]
 
 
 # if [[ "$@" == "" ]]; then
+echo "RUNNING TESTS"
+python app.py --runTests
 pyinstaller --clean -y --dist ./dist/windows --workpath /tmp $SPEC_FILE
 chown -R --reference=. ./dist/windows
 # else
