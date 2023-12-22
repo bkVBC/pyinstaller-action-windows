@@ -42,6 +42,7 @@ fi
 cd $WORKDIR
 
 if [ -f $5 ]; then
+    pip install OspreyWidgets/
     pip install -r $5
 fi # [ -f $5 ]
 
